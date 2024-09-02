@@ -57,6 +57,8 @@ dependencies {
     implementation(libs.androidx.fragment)
     annotationProcessor(libs.room.compiler)
     ksp(libs.room.compiler)
+    //added for coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
     //added for retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
