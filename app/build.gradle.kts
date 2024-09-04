@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.androidx.navigation.safeargs)
     alias(libs.plugins.ksp)
     alias(libs.plugins.parcelize)
+    id("com.google.gms.google-services")
 
 }
 
@@ -69,6 +70,9 @@ dependencies {
     implementation(libs.lottie.animaton)
     //androidYoutubePlayer
     implementation(libs.androidYoutubePlayer)
+
+    //Firebase
+    implementation(platform(libs.firebase.bom))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
