@@ -71,6 +71,9 @@ dependencies {
     implementation(libs.lottie.animaton)
     //androidYoutubePlayer
     implementation(libs.androidYoutubePlayer)
+    // Import the BoM for the Firebase platform
+    implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
+    implementation("com.google.firebase:firebase-firestore")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
