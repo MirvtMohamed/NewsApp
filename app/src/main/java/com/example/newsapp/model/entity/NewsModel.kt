@@ -16,3 +16,10 @@ data class NewsModel (
     val url: String,
     val urlToImage: String,
 )
+
+data class NewsFirebaseModel(
+    val id: String,
+    val title: String,
+    val url: String,
+    val urlToImage: String,
+)
