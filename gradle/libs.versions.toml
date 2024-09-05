@@ -23,6 +23,7 @@ uiDesktop = "1.6.8"
 fragment = "1.8.2"
 androidYoutubePlayerVersion = "12.1.0"
 googleGmsGoogleServices = "4.4.2"
+firebaseFirestore = "25.1.0"
 
 
 [libraries]
@@ -55,6 +56,7 @@ androidx-ui-desktop = { group = "androidx.compose.ui", name = "ui-desktop", vers
 androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
 
 androidYoutubePlayer = { group = "com.pierfrancescosoffritti.androidyoutubeplayer", name = "core", version.ref = "androidYoutubePlayerVersion" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 
 
 

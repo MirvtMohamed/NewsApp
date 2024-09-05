@@ -18,5 +18,8 @@ class MainActivity : AppCompatActivity() {
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+
+        // Check that the correct NavGraph is being used
+        navController.setGraph(R.navigation.nav_graph)
     }
 }

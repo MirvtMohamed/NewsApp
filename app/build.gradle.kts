@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.room.runtime)
     implementation(libs.androidx.ui.desktop)
     implementation(libs.androidx.fragment)
+    implementation(libs.firebase.firestore)
     annotationProcessor(libs.room.compiler)
     ksp(libs.room.compiler)
     //added for retrofit

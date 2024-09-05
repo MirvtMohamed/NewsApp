@@ -29,6 +29,7 @@ class SplashScreenFragment : Fragment() {
 
         // Simulate a delay for splash screen
         Handler(Looper.getMainLooper()).postDelayed({
+            Log.d("SplashScreenFragment", "Navigating based on user state")
             refreshUser()
         }, 10000) // 2 seconds delay
 
