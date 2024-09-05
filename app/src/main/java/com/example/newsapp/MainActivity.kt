@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         // replace to settings fragment
 
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, SettingsFragment())
+                .replace(R.id.news_list, SettingsFragment())
                 .addToBackStack(null)
                 .commit()
 

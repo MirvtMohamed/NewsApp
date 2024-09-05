@@ -19,8 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            tools:layout_editor_absoluteX="129dp"
-            tools:layout_editor_absoluteY="16dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-81dp"
             tools:src="@tools:sample/backgrounds/scenic" />
 
         <View
@@ -33,17 +33,16 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:id="@+id/article_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:fontFamily="@font/amita_bold"
-            android:textColor="@color/white"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/shadow_view"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/shadow_view"
             tools:ignore="MissingConstraints"
-            tools:text="@tools:sample/full_names" />
+            tools:text="@tools:sample/full_names"
+            style="@style/TVStyle" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
