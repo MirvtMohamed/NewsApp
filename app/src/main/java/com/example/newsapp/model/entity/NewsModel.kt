@@ -4,14 +4,15 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
+data class Article(
+    val articles: List<NewsModel>
+)
+
+
 @Entity(tableName = "news")
 data class NewsModel (
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
     val title: String,
-    val description: String,
+    @PrimaryKey
     val url: String,
     val urlToImage: String,
-    val publishedAt: String,
-    val content: String
 )
