@@ -20,13 +20,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class RemoteNewsViewModel(application: Application) : AndroidViewModel(application) {
-    private val service: ServiceApi
-
-    init {
-        service = RetroBuilder.getRetroInstance().create(ServiceApi::class.java)
-
-    }
-
+    private val service: ServiceApi = RetroBuilder.getRetroInstance().create(ServiceApi::class.java)
 
 
     fun getNewsApi() {
@@ -48,21 +42,18 @@ class RemoteNewsViewModel(application: Application) : AndroidViewModel(applicati
         })
     }
 
-    fun getCategoryNewsApi(category: String) {
+    fun getCategoryNewsApi(category: String) : List<NewsModel> {
+        var articles: List<NewsModel> = emptyList()
         service.getCategoryApiNews(category).enqueue(object : Callback<Article> {
             override fun onResponse(call: Call<Article>, response: Response<Article>) {
                 val news = response.body()
-                val articles = news?.articles
-                if (articles != null) {
-                    for (article in articles) {
-                        Log.d("RemoteNewsViewModel", "onResponse: ${article}")
-                    }
-                }
+                articles = news?.articles ?: emptyList()
             }
 
             override fun onFailure(call: Call<Article>, t: Throwable) {
                 Log.e("RemoteNewsViewModel", "onFailure: ${t.message}")
             }
         })
+        return articles
     }
 }
