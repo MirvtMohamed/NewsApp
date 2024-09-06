@@ -1,20 +1,16 @@
-package com.example.newsapp
-
-import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Adapter
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.example.newsapp.R
 import com.example.newsapp.databinding.ArticleListItemBinding
-import com.example.newsapp.model.entity.Article
 import com.example.newsapp.model.entity.NewsModel
 
-
-class NewsAdapter(val articles: ArrayList<NewsModel>) :
-    RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter(
+    val articles: ArrayList<NewsModel>,
+    private val onFavoriteClick: (NewsModel) -> Unit // Callback for favorite click
+) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     class NewsViewHolder(val binding: ArticleListItemBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -35,5 +31,10 @@ class NewsAdapter(val articles: ArrayList<NewsModel>) :
             .error(R.drawable.broken_image)
             .transition(DrawableTransitionOptions.withCrossFade(1000))
             .into(holder.binding.articleImage)
+
+        // Handle favorite button click
+        holder.binding.favsTop.setOnClickListener {
+            onFavoriteClick(article) // Trigger the callback when the favorite icon is clicked
+        }
     }
 }
