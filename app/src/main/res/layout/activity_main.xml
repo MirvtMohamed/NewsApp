@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/option_menu"
         android:padding="10dp"
-        app:title='Home' />
+        app:title='News App' />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"

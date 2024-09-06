@@ -1,4 +1,4 @@
-package com.example.newsapp
+package com.example.newsapp.ui
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -11,6 +11,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.fragment.app.Fragment
 import android.widget.Toast
+import com.example.newsapp.R
 
 class SettingsFragment : Fragment() {
 

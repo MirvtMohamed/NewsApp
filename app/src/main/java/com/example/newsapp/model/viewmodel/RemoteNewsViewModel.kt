@@ -1,9 +1,9 @@
-package com.example.newsapp.ui.favoriteList
+package com.example.newsapp.model.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.newsapp.model.entity.NewsModel
-import com.example.newsapp.model.remote.RetroBuilder
+import com.example.newsapp.model.retrofit.RetroBuilder
 
 
 class RemoteNewsViewModel : ViewModel() {

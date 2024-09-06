@@ -1,4 +1,4 @@
-package com.example.newsapp.ui.favoriteList
+package com.example.newsapp.model.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

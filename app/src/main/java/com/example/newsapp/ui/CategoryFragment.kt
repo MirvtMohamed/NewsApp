@@ -1,13 +1,11 @@
-package com.example.newsapp
+package com.example.newsapp.ui
 
-import NewsAdapter
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -16,8 +14,9 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newsapp.databinding.FragmentCategoryBinding
 import com.example.newsapp.model.entity.NewsModel
-import com.example.newsapp.ui.favoriteList.NewsViewModel
-import com.example.newsapp.ui.favoriteList.RemoteNewsViewModel
+import com.example.newsapp.model.remote.firebase.FirebaseHelper
+import com.example.newsapp.model.viewmodel.NewsViewModel
+import com.example.newsapp.model.viewmodel.RemoteNewsViewModel
 import kotlinx.coroutines.launch
 class CategoryFragment : Fragment() {
 
@@ -84,6 +83,8 @@ class CategoryFragment : Fragment() {
         if (!favoriteArticles.contains(article)) {
             favoriteArticles.add(article)
             viewModel.addNews(article)
+            val trial= FirebaseHelper()
+            trial.addNews(article)
         }
         adapter.notifyDataSetChanged()
     }
@@ -91,7 +92,7 @@ class CategoryFragment : Fragment() {
 
 
 //    private lateinit var binding: FragmentCategoryBinding
-//    private lateinit var adapter: NewsAdapter
+//    private lateinit var adapter: com.example.newsapp.ui.NewsAdapter
 //    private lateinit var firebaseHelper: FirebaseHelper
 //    private val favoriteArticles = mutableListOf<NewsM>()
 //    private val viewModel: NewsViewModel by viewModels()// List to hold favorite articles
@@ -111,7 +112,7 @@ class CategoryFragment : Fragment() {
 //        val remoteNewsViewModel: RemoteNewsViewModel by viewModels()
 //
 //        // Set up RecyclerView
-//        adapter = NewsAdapter(arrayListOf()) { article ->
+//        adapter = com.example.newsapp.ui.NewsAdapter(arrayListOf()) { article ->
 //            onFavoriteClick(article) // Handle favorite click
 //        }
 //

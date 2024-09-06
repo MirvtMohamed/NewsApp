@@ -1,4 +1,4 @@
-package com.example.newsapp
+package com.example.newsapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -28,17 +28,17 @@ class HomeFragment : Fragment() {
 
 
         binding.sportsCategoryCard.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToCategoryFragment("Sports")
+            val action = HomeFragmentDirections.actionHomeFragmentToCategoryFragment("sports")
             navController.navigate(action)
         }
 
         binding.technologyCategoryCard.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToCategoryFragment("Technology")
+            val action = HomeFragmentDirections.actionHomeFragmentToCategoryFragment("technology")
             navController.navigate(action)
         }
 
         binding.entertainmentCategoryCard.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToCategoryFragment("Entertainment")
+            val action = HomeFragmentDirections.actionHomeFragmentToCategoryFragment("entertainment")
             navController.navigate(action)
         }
     }

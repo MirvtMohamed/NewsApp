@@ -49,7 +49,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.newsapp.HomeFragment"
+        android:name="com.example.newsapp.ui.HomeFragment"
         android:label="Home">
     <action
         android:id="@+id/action_homeFragment_to_categoryFragment"
@@ -62,17 +62,17 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.newsapp.SettingsFragment"
+        android:name="com.example.newsapp.ui.SettingsFragment"
         android:label="Settings" />
 
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.example.newsapp.FavoriteFragment"
+        android:name="com.example.newsapp.ui.FavoriteFragment"
         android:label="Favorite" />
 
     <fragment
         android:id="@+id/categoryFragment"
-        android:name="com.example.newsapp.CategoryFragment"
+        android:name="com.example.newsapp.ui.CategoryFragment"
         android:label="Category"
         tools:layout="@layout/fragment_category">
         <argument

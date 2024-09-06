@@ -1,10 +1,5 @@
 package com.example.newsapp.model
 
-import androidx.activity.viewModels
-import com.example.newsapp.model.entity.NewsModel
-import com.example.newsapp.ui.favoriteList.NewsViewModel
-import com.example.newsapp.ui.favoriteList.RemoteNewsViewModel
-
 class Helper {
     // add data to room database
 //    val newsModel = NewsM(

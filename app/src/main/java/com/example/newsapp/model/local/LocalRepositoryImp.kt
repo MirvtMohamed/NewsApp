@@ -1,5 +1,6 @@
 package com.example.newsapp.model.local
 
+import android.util.Log
 import com.example.newsapp.model.entity.NewsModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -10,6 +11,7 @@ class LocalRepositoryImp(private val db:NewsDatabase): LocalRepository {
         // Dispatchers.IO is a thread pool that is optimized for disk IO operations
         withContext(Dispatchers.IO) {
             db.newsDao().addNews(news)
+            Log.d("model added succesfully",news.title)
         }
     }
 

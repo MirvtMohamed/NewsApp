@@ -1,4 +1,4 @@
-package com.example.newsapp.model.remote
+package com.example.newsapp.model.retrofit
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
