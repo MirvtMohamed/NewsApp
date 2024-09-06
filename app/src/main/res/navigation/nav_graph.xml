@@ -51,4 +51,15 @@
         android:id="@+id/homeFragment"
         android:name="com.example.newsapp.HomeFragment"
         android:label="Home" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.newsapp.SettingsFragment"
+        android:label="Settings" />
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.newsapp.FavoriteFragment"
+        android:label="Favorite" />
+
 </navigation>
