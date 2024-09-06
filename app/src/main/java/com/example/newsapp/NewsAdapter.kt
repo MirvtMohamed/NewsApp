@@ -12,7 +12,7 @@ import com.example.newsapp.model.entity.Article
 import com.example.newsapp.model.entity.NewsModel
 
 
-class NewsAdapter(val a: NewsModel, val articles: ArrayList<NewsModel>) :
+class NewsAdapter(val articles: ArrayList<NewsModel>) :
     Adapter<NewsAdapter.NewsViewHolder>() {
     class NewsViewHolder(val binding: ArticleListItemBinding): ViewHolder(binding.root) {
 
