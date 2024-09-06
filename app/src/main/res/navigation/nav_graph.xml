@@ -62,4 +62,9 @@
         android:name="com.example.newsapp.FavoriteFragment"
         android:label="Favorite" />
 
+    <fragment
+        android:id="@+id/categoryFragment2"
+        android:name="CategoryFragment"
+        android:label="CategoryFragment" />
+
 </navigation>
