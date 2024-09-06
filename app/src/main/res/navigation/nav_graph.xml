@@ -50,7 +50,15 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.newsapp.HomeFragment"
-        android:label="Home" />
+        android:label="Home">
+    <action
+        android:id="@+id/action_homeFragment_to_categoryFragment"
+        app:destination="@id/categoryFragment">
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+    </action>
+</fragment>
 
     <fragment
         android:id="@+id/settingsFragment"
@@ -63,8 +71,14 @@
         android:label="Favorite" />
 
     <fragment
-        android:id="@+id/categoryFragment2"
-        android:name="CategoryFragment"
-        android:label="CategoryFragment" />
+        android:id="@+id/categoryFragment"
+        android:name="com.example.newsapp.CategoryFragment"
+        android:label="Category"
+        tools:layout="@layout/fragment_category">
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+    </fragment>
+
 
 </navigation>

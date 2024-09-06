@@ -10,6 +10,7 @@
         android:id="@+id/news_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="130dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/article_list_item" />
 
@@ -17,6 +18,17 @@
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="89dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/baseline_arrow_back_24" />
+
+
 
 </FrameLayout>

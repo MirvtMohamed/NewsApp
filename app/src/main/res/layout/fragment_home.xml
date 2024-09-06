@@ -24,7 +24,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/sportsCategory"
+            android:id="@+id/sportsCategoryCard"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -61,7 +61,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/techCategory"
+            android:id="@+id/technologyCategoryCard"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -98,7 +98,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/entertainmentCategory"
+            android:id="@+id/entertainmentCategoryCard"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

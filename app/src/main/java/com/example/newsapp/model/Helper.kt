@@ -7,7 +7,7 @@ import com.example.newsapp.ui.favoriteList.RemoteNewsViewModel
 
 class Helper {
     // add data to room database
-//    val newsModel = NewsModel(
+//    val newsModel = NewsM(
 //        "newsTitle",
 //        "any url",
 //        "ghjk",

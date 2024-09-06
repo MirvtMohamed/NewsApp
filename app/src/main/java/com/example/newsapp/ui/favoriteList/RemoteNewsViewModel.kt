@@ -1,59 +1,76 @@
 package com.example.newsapp.ui.favoriteList
 
-import android.app.Application
 import android.util.Log
-import android.view.WindowInsetsAnimation
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
-import com.example.newsapp.model.entity.Article
+import androidx.lifecycle.ViewModel
 import com.example.newsapp.model.entity.NewsModel
-import com.example.newsapp.model.local.LocalRepositoryImp
-import com.example.newsapp.model.local.NewsDatabase
 import com.example.newsapp.model.remote.RetroBuilder
-import com.example.newsapp.model.remote.ServiceApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
-class RemoteNewsViewModel(application: Application) : AndroidViewModel(application) {
-    private val service: ServiceApi = RetroBuilder.getRetroInstance().create(ServiceApi::class.java)
 
 
-    fun getNewsApi() {
-        service.getApiNews().enqueue(object : Callback<Article> {
-            override fun onResponse(call: Call<Article>, response: Response<Article>) {
-                val news = response.body()
-                val articles = news?.articles
-                if (articles != null) {
-                    for (article in articles) {
-                        Log.d("RemoteNewsViewModel", "onResponse: ${article}")
-                        }
-                    }
-                }
+class RemoteNewsViewModel : ViewModel() {
 
+    private val service = RetroBuilder.api
 
-            override fun onFailure(call: Call<Article>, t: Throwable) {
-                Log.e("RemoteNewsViewModel", "onFailure: ${t.message}")
+    // Function to get news by category
+    suspend fun getCategoryNewsApi(category: String): List<NewsModel> {
+        return try {
+            // Make the API call
+            val response = service.getCategoryApiNews(category = category)
+
+            // Check if response is successful and body is not null
+            if (response.isSuccessful) {
+                response.body()?.articles ?: emptyList()
+            } else {
+                Log.e("RemoteNewsViewModel", "Error: ${response.errorBody()?.string()}")
+                emptyList()
             }
-        })
-    }
-
-    fun getCategoryNewsApi(category: String) : List<NewsModel> {
-        var articles: List<NewsModel> = emptyList()
-        service.getCategoryApiNews(category).enqueue(object : Callback<Article> {
-            override fun onResponse(call: Call<Article>, response: Response<Article>) {
-                val news = response.body()
-                articles = news?.articles ?: emptyList()
-            }
-
-            override fun onFailure(call: Call<Article>, t: Throwable) {
-                Log.e("RemoteNewsViewModel", "onFailure: ${t.message}")
-            }
-        })
-        return articles
+        } catch (e: Exception) {
+            Log.e("RemoteNewsViewModel", "Exception: ${e.message}")
+            emptyList()
+        }
     }
 }
+
+
+
+
+
+//class RemoteNewsViewModel(application: Application) : AndroidViewModel(application) {
+//    private val service: ServiceApi = RetroBuilder.getRetroInstance().create(ServiceApi::class.java)
+//
+//
+//    fun getNewsApi() {
+//        service.getApiNews().enqueue(object : Callback<Article> {
+//            override fun onResponse(call: Call<Article>, response: Response<Article>) {
+//                val news = response.body()
+//                val articles = news?.articles
+//                if (articles != null) {
+//                    for (article in articles) {
+//                        Log.d("RemoteNewsViewModel", "onResponse: ${article}")
+//                        }
+//                    }
+//                }
+//
+//
+//            override fun onFailure(call: Call<Article>, t: Throwable) {
+//                Log.e("RemoteNewsViewModel", "onFailure: ${t.message}")
+//            }
+//        })
+//    }
+
+//    fun getCategoryNewsApi(category: String) : List<NewsM> {
+//        var articles: List<NewsM> = emptyList()
+//        service.getCategoryApiNews(category).enqueue(object : Callback<Article> {
+//            override fun onResponse(call: Call<Article>, response: Response<Article>) {
+//                val news = response.body()
+//                articles = news?.articles ?: emptyList()
+//            }
+//
+//            override fun onFailure(call: Call<Article>, t: Throwable) {
+//                Log.e("RemoteNewsViewModel", "onFailure: ${t.message}")
+//            }
+//        })
+//        return articles
+//    }
+
+
+//}

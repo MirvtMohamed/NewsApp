@@ -1,5 +1,5 @@
 //        val trial= FirebaseHelper()
-//        trial.addNews(NewsModel("h","s","f"))
+//        trial.addNews(NewsM("h","s","f"))
 //        var newsList: List<NewsFirebaseModel>
 //        lifecycleScope.launch {
 //            try {
