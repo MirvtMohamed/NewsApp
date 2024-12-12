@@ -58,6 +58,8 @@ dependencies {
     implementation(libs.androidx.fragment)
     annotationProcessor(libs.room.compiler)
     ksp(libs.room.compiler)
+    //added for coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
     //added for retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -70,6 +72,9 @@ dependencies {
     implementation(libs.lottie.animaton)
     //androidYoutubePlayer
     implementation(libs.androidYoutubePlayer)
+    // Import the BoM for the Firebase platform
+    implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
+    implementation("com.google.firebase:firebase-firestore")
 
     //Firebase
     implementation(platform(libs.firebase.bom))
